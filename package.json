@@ -1,0 +1,42 @@
+{
+  "name": "macawws.uikit",
+  "version": "0.0.1",
+  "description": "Macawws UI Kit based on Bootstrap 4 for empowering your Mobile & Web Apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/macawws/macawws.uikit.git"
+  },
+  "keywords": [
+    "UI",
+    "Grid",
+    "Front-End",
+    "CSS3",
+    "Animate.css"
+  ],
+  "author": "Macaw.ws",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/macawws/macawws.uikit/issues"
+  },
+  "homepage": "https://github.com/macawws/macawws.uikit#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-csslint": "^1.0.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.0",
+    "gulp-uglify": "^2.0.0"
+  },
+  "dependencies": {
+    "animate.css": "^3.5.2",
+    "bootstrap": "^4.0.0-alpha.6",
+    "font-awesome": "^4.7.0"
+  }
+}
