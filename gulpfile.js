@@ -1,8 +1,10 @@
 'use strict';
 
-// Packages
+//** PACKAGES **//
+var fs = require('fs');
+
 var gulp       = require('gulp');
-//var Q          = require('q');
+var Q          = require('q');
 var sourcemaps = require('gulp-sourcemaps');
 var concat     = require('gulp-concat');
 var uglify     = require('gulp-uglify');
@@ -10,56 +12,69 @@ var sass       = require('gulp-sass');
 var rename     = require('gulp-rename');
 var cssnano    = require('gulp-cssnano');
 
-// Paths
-/*var bower = {
-	bs4: 'components/bootstrap',
-	flv: 'components/fluidvids/',
-	sre: 'components/scrollreveal/'
+
+//** PATHS **//
+
+// Package.json Attributes
+var json = JSON.parse(fs.readFileSync('./package.json'));
+
+// Node Modules
+var mod = {
+  jqy: 'node_modules/jquery/',
+  thr: 'node_modules/tether/',
+  bs4: 'node_modules/bootstrap/',
+	faw: 'node_modules/font-awesome/',
+	sre: 'node_modules/scrollreveal/'
 };
-*/
+
+// Gulp Sass Config
 var sassOpts = {
   errLogToConsole: true,
   outputStyle: 'expanded'
 };
 
+// Directories
 var dir = {
   src: {
-    js:  'src/js/',
-    scss: 'src/scss/'
+    js:    'assets/src/js/',
+    scss:  'assets/src/scss/',
+    img:   'assets/src/img/',
   },
   dist: {
-    js: 'dist/js/',
-    css: 'dist/css/'
+    js:    'assets/dist/js/',
+    fonts: 'assets/dist/fonts/',
+    css:   'assets/dist/css/',
+    img:   'assets/dist/img/',
   }
 };
 
-// Tasks
-/*gulp.task('sync', function () {
+//** TASKS **//
+gulp.task('sync', function () {
   var deferred = Q.defer();
 
   setTimeout(function () {
     deferred.resolve();
-  }, 2000);
+  }, 200);
 
   return deferred.promise;
-});*/
+});
 
 gulp.task('jsbuild', function () {
   return gulp.src([
-  	bower.flv + 'dist/fluidvids.js',
-		bower.sre + 'dist/scrollreveal.js',
-  	dir.src.js + 'gm.search.js',
-  	dir.src.js + 'gm.stickynav.js',
-  	dir.src.js + 'main.js'
+      mod.jqy    + 'dist/jquery.slim.js',
+		  mod.thr    + 'dist/js/tether.js',
+      mod.bs4    + 'dist/js/bootstrap.js',
+      mod.sre    + 'dist/scrollreveal.js',
+      dir.src.js + 'main.js'
   	])
     .pipe(sourcemaps.init())
-    .pipe(concat('blackpalm.js'))
+    .pipe(concat(json.short_name + '.js'))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(dir.dist.js));
 });
 
 gulp.task('jsmin', function () {
-  return gulp.src(dir.dist.js + 'blackpalm.js')
+  return gulp.src(dir.dist.js + json.short_name + '.js')
     .pipe(sourcemaps.init())
     .pipe(uglify())
     .pipe(rename({suffix: '.min'}))
@@ -70,14 +85,14 @@ gulp.task('jsmin', function () {
 // Copy fonts from modules to dist
 gulp.task('fonts', function() {
   return gulp.src(
-    ['components/font-awesome/fonts/fontawesome-webfont.*']
+    [mod.faw + 'fonts/fontawesome-webfont.*']
     )
-    .pipe(gulp.dest('assets/dist/fonts/'));
+    .pipe(gulp.dest(dir.dist.fonts));
 });
 //
 
 gulp.task('cssbuild', function () {
-  return gulp.src(dir.src.scss + 'blackpalm.scss')
+  return gulp.src(dir.src.scss + json.short_name + '.scss')
     .pipe(sourcemaps.init())
     .pipe(sass(sassOpts).on('error', sass.logError))
     .pipe(sourcemaps.write('./'))
@@ -85,13 +100,14 @@ gulp.task('cssbuild', function () {
 });
 
 gulp.task('cssmin', function () {
-  return gulp.src(dir.dist.css + 'blackpalm.css')
+  return gulp.src(dir.dist.css + json.short_name + '.css')
     .pipe(sourcemaps.init())
     .pipe(rename({suffix: '.min'}))
     .pipe(cssnano())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(dir.dist.css));
 });
+
 
 //
 gulp.task('styles', ['fonts','cssbuild','sync'], function () {

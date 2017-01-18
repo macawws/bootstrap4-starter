@@ -1,0 +1,46 @@
+//== Your Variables and Configs ==//
+
+// Font Awesome
+$fa-font-path: "../fonts";
+
+// Node Assets
+$node:         "../../../node_modules";
+
+
+//-- Enable-Disable Bootstrap Features*
+$enable-flex:               true;
+$enable-transitions:        true;
+$enable-shadows:            true;
+$enable-rounded:            true;
+
+$theme-border-radius:      .5rem;
+
+// Navbar*
+$navbar-light-color:       rgba(0,0,0,.8);
+$navbar-light-hover-color: rgba(0,0,0,.95);
+$navbar-dark-color:        rgba(255,255,255,.8);
+$navbar-dark-hover-color:  rgba(255,255,255,.9);
+$navbar-border-radius: 	   $theme-border-radius;
+
+// Button*
+$btn-border-radius:        $theme-border-radius;
+
+// Input*
+$input-border-radius:      $theme-border-radius;
+
+// Card*
+$card-border-radius:       $theme-border-radius;
+
+
+// Dark and Fade BS pre-defined standards
+$gray-dark:                 #3a4651;
+$gray-light:                #ccdfeb;
+$gray-lightest:             #f8fafc;
+
+
+//-- Theme Default Standards*
+$brand-primary:            #7952b3;
+$brand-success:            #9fbb58;
+$brand-info:               #33b5e5;
+$brand-warning:            #ffc336;
+$brand-danger:   		   #e02512;

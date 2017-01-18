@@ -1,0 +1,10 @@
+//-- Transitions --//
+
+@if $enable-transitions {
+
+  // All links transitions
+  a {
+    @include transition(all .2s ease-in-out);
+  }
+
+}

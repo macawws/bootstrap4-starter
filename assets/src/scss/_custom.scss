@@ -1,0 +1,23 @@
+//-- Custom Component --//
+
+body {
+	font-family: 'Open Sans', sans-serif !important;
+}
+
+::selection {
+	color: #fff;
+    background: $brand-primary;
+}
+
+::-moz-selection {
+	color: #fff;
+    background: $brand-primary;
+}
+
+
+
+@include media-breakpoint-down(md) {}
+
+@include media-breakpoint-down(sm) {}
+
+@include media-breakpoint-down(xs) {}

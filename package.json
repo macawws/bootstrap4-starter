@@ -1,7 +1,8 @@
 {
-  "name": "macawws.uikit",
+  "name": "bootstrap4-starter",
+  "short_name": "bs4-starter",
   "version": "0.0.1",
-  "description": "Macawws UI Kit based on Bootstrap 4 for empowering your Mobile & Web Apps",
+  "description": "An Bootstrap 4 Starter Kit (Bootstrap 4 + Font Awesome + ScrollReveal.js + PWA Configs + Gulp Scripts).",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,18 +12,22 @@
     "url": "git+https://github.com/macawws/macawws.uikit.git"
   },
   "keywords": [
+    "Bootstrap 4",
+    "Font Awesome",
+    "jQuery",
+    "PWA",
     "UI",
     "Grid",
     "Front-End",
     "CSS3",
-    "Animate.css"
+    "ScrollReveal.js"
   ],
   "author": "Macaw.ws",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/macawws/macawws.uikit/issues"
+    "url": "https://github.com/macawws/bootstrap4-starter/issues"
   },
-  "homepage": "https://github.com/macawws/macawws.uikit#readme",
+  "homepage": "https://github.com/macawws/bootstrap4-starter#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
@@ -35,8 +40,8 @@
     "gulp-uglify": "^2.0.0"
   },
   "dependencies": {
-    "animate.css": "^3.5.2",
     "bootstrap": "^4.0.0-alpha.6",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "scrollreveal": "^3.3.2"
   }
 }

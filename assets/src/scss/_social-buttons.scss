@@ -1,0 +1,44 @@
+//-- Social Buttons --//
+
+// 
+.btn-facebook {
+  @include button-variant(#fff, #3b5998, #3b5998);
+}
+
+.btn-twitter {
+  @include button-variant(#fff, #55acee, #55acee);
+}
+
+.btn-gplus {
+  @include button-variant(#fff, #dd4c3b, #dd4c3b);
+}
+
+.btn-linkedin {
+  @include button-variant(#fff, #0077b5, #0077b5);
+}
+
+.btn-rss {
+  @include button-variant(#fff, #f60, #f60);
+}
+
+
+// Outline
+.btn-outline-facebook {
+    @include button-outline-variant(#3b5998);
+}
+
+.btn-outline-twitter {
+  @include button-outline-variant(#55acee);
+}
+
+.btn-outline-gplus {
+	@include button-outline-variant(#dd4c3b);
+}
+
+.btn-outline-linkedin {
+	@include button-outline-variant(#0077b5);
+}
+
+.btn-outline-rss {
+	@include button-outline-variant(#f60);
+}
